@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_action :set_contact, only:[:show, :update, :destroy]
+  
   # GET /contacts
   def index
     @contact = Contact.all
@@ -24,7 +26,7 @@ class ContactsController < ApplicationController
 
   # DELETE /contacts/:id
   def destroy
-    @contacts.destroy
+    @contact.destroy
     head :no_content
   end
 
@@ -34,4 +36,9 @@ class ContactsController < ApplicationController
     # whitelist params
     params.permit(:first_name, :last_name, :phone, :email)
   end
+
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
+
 end
