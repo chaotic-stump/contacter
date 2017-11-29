@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   
   # GET /contacts
   def index
-    @contact = Contact.all
+    @contacts = Contact.all
     json_response(@contacts)
   end
 
