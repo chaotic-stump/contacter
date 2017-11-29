@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Welcome to Contacter!
 
-Things you may want to cover:
+- Getting Started: 
+- Note:This service requires [httpie](https://httpie.org/). Go there to install it. If you have homebrew, enter `brew install httpie` in your terminal.
 
-* Ruby version
+1. Clone this repo.
 
-* System dependencies
+```
+git clone http://github.com/seanrparker/contacter
+```
 
-* Configuration
+2. Go to your command line and enter: 
+```
+cd contacter
+bundle install
+rake db:migrate
+rails s -p 3000
+```
+- Note: if the server won't start, you might need to free that port and shut down other projects running it.
 
-* Database creation
+3. Open a browser and navigate to `localhost:3000/contacts`
 
-* Database initialization
+### You are now ready to modify your contacts!
 
-* How to run the test suite
+Following is a list of actions along with their commands.
 
-* Services (job queues, cache servers, search engines, etc.)
+See all contacts:
 
-* Deployment instructions
-
-* ...
+```
+http :3000/contacts
+```
